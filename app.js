@@ -19,7 +19,8 @@ app.get('/',(req, res)=> {
 
 app.post("/signup",async(req,res)=>{
     const{email,password}=req.body;
-    console.log(req.body);
+    const newUser=new User({email,password});
+    newUser.save();
    
 })
 app.listen(port,()=>{
